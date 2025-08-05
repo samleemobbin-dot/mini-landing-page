@@ -1,0 +1,7 @@
+services:
+  - type: static
+    name: mini-landing-page
+    repo: https://github.com/samleemobbin-dot/mini-landing-page
+    branch: main
+    buildCommand: ""
+    publishPath: "."
