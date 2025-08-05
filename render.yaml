@@ -1,7 +1,10 @@
 services:
-  - type: static
-    name: mini-landing-page
+  - type: web
+    name: mini-landing-server
+    env: node
+    plan: free
     repo: https://github.com/samleemobbin-dot/mini-landing-page
     branch: main
-    buildCommand: ""
-    publishPath: "."
+    buildCommand: "npm install"
+    startCommand: "npm start"
+    autoDeploy: true
