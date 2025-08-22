@@ -71,6 +71,57 @@ paradigm-shift/
 - **[🎨 CSS Classes Reference](#css-classes-reference)** - All available CSS classes and utilities
 - **[⚙️ Configuration Guide](#configuration)** - Server and build configuration
 
+### API Usage Examples
+
+Below are quick examples for interacting with the server-side endpoints that power the template.
+
+#### cURL
+
+```bash
+# Landing page
+curl http://localhost:3000/
+
+# Fetch CSS asset
+curl http://localhost:3000/assets/css/main.css -o main.css
+
+# Fallback route
+curl http://localhost:3000/some/random/path
+```
+
+#### Browser Fetch
+
+```js
+// Landing page
+fetch('http://localhost:3000/')
+  .then(r => r.text())
+  .then(html => console.log(html));
+
+// Asset
+fetch('http://localhost:3000/assets/css/main.css')
+  .then(r => r.text())
+  .then(css => console.log(css));
+```
+
+#### TypeScript SDK
+
+The repository ships with a lightweight typed SDK under `sdk/index.ts`.
+
+```ts
+import { StaticSiteSDK } from './sdk';
+
+(async () => {
+  const api = new StaticSiteSDK({ baseURL: 'http://localhost:3000' });
+
+  // Landing page
+  const index = await api.getIndex();
+  console.log(index.data);
+
+  // Asset
+  const css = await api.getAsset('css/main.css');
+  console.log(css.data);
+})();
+```
+
 ## 🎨 Features
 
 ### ✨ Core Features

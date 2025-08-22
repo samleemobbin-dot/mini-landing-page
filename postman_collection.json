@@ -1,0 +1,55 @@
+{
+  "info": {
+    "_postman_id": "static-site-api-collection",
+    "name": "Static Site Server API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": "Postman collection for testing the Static Site Server API."
+  },
+  "item": [
+    {
+      "name": "Get Landing Page",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": [""]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Asset (CSS)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/assets/css/main.css",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["assets", "css", "main.css"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Fallback Route",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/some/random/path",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["some", "random", "path"]
+        }
+      },
+      "response": []
+    }
+  ]
+}

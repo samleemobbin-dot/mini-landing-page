@@ -1,0 +1,58 @@
+openapi: 3.1.0
+info:
+  title: Static Site Server API
+  description: API definition for the Express static server that powers the Paradigm Shift template.
+  version: "1.0.0"
+servers:
+  - url: http://localhost:3000
+paths:
+  "/":
+    get:
+      summary: Serve landing page (index.html)
+      operationId: getIndex
+      responses:
+        "200":
+          description: Successful response with HTML document
+          content:
+            text/html:
+              schema:
+                type: string
+  "/assets/{filePath}":
+    parameters:
+      - name: filePath
+        in: path
+        required: true
+        description: Relative path under the assets directory (e.g. css/main.css)
+        schema:
+          type: string
+          pattern: ".*"
+    get:
+      summary: Serve static asset from assets folder
+      operationId: getAsset
+      responses:
+        "200":
+          description: The requested asset.
+          content:
+            "*/*":
+              schema:
+                type: string
+                description: Binary or text asset (media type varies)
+  "/{path}":
+    parameters:
+      - name: path
+        in: path
+        required: true
+        description: Any route not matching a physical file; falls back to index.html for SPA routing.
+        schema:
+          type: string
+          pattern: ".*"
+    get:
+      summary: Fallback route (returns index.html)
+      operationId: getFallback
+      responses:
+        "200":
+          description: Successful response with HTML document
+          content:
+            text/html:
+              schema:
+                type: string
