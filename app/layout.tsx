@@ -1,4 +1,10 @@
-import { Analytics } from "@vercel/analytics/next";
+import type { Metadata } from 'next';
+import './globals.css';
+
+export const metadata: Metadata = {
+  title: 'Nexus CRM - Relationships Amplified',
+  description: 'Transform how you connect with customers with intelligent automation and real-time insights.',
+};
 
 export default function RootLayout({
   children,
@@ -7,10 +13,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
-        {children}
-        <Analytics />
-      </body>
+      <body>{children}</body>
     </html>
   );
 }
