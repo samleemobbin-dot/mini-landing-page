@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="AS MOB logo">
+  <rect width="512" height="512" fill="#000"/>
+  <g fill="#fff">
+    <text x="52" y="218" font-family="Arial Black, Montserrat, sans-serif" font-size="122" font-weight="900" letter-spacing="8">AS</text>
+    <rect x="218" y="140" width="160" height="14" rx="2"/>
+    <rect x="38" y="254" width="156" height="14" rx="2"/>
+    <text x="188" y="328" font-family="Arial Black, Montserrat, sans-serif" font-size="130" font-weight="900" letter-spacing="10">MOB</text>
+  </g>
+</svg>
